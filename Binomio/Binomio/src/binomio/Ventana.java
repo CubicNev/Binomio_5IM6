@@ -1,10 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+AUTOR: J. Carlos Nevarez Tovar/Juan Ignacio Monroy Gonzalez 5IM6
+VERSIÓN: 1.0 
+DESCRIPCIÓN: Clase que describe la ventana del programa y desarrolla el binomio
+OBSERVACIONES: Ninguna
+COMPILACIÓN: Se compila en tiempo de ejecucion. 
+EJECUCIÓN: Se ejecuta desde NeatBeans (8.0 en adelante) presionando la tecla F6
+*/
 package binomio;
 //LIBRERIAS
 import java.awt.*;
@@ -16,9 +17,11 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 
 /**
+ * <h3>Clase ventana</h3>
  * Esta clase crea una ventana para desplegar los parametros de un Binomio para despúes desplegar un TCP
- * @author Juan Carlos Nevarez Tovar & Juan Ignacio Monroy Gonzalez
- * @version 25/08/2017 1.1
+ * @author Juan Carlos Nevarez Tovar
+ * @version v1.0.1
+ * @since 25/08/2017
  */
 public class Ventana extends JFrame implements ActionListener{
 
@@ -33,11 +36,21 @@ public class Ventana extends JFrame implements ActionListener{
     JTextField coeficiente2;
     JTextField obtenido;
     
+    /**
+     * Contructor para agregar las instancias de la ventana
+     * @see Ventana#configurar() 
+     * @see Ventana#elementos() 
+     */
     public Ventana(){
         configurar();
         elementos();
-    }
+    }//Cierre del constructor
     
+    /**
+     * <h3>Configuracion de la ventana</h3>
+     * Método que describe la ventana, se agrega en el contructor
+     * @see Ventana#Ventana() 
+     */
     public void configurar(){
         setTitle("Binomio");
         setSize(600,500);
@@ -46,8 +59,13 @@ public class Ventana extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-    }
+    }//Cierre del método
     
+    /**
+     * <h3>Agregar elementos a la ventana</h3>
+     * Este metodo configura y añade los elementos de la ventana, se eagrega en el constructor
+     * @see Ventana#Ventana() 
+     */
     public void elementos(){
       titulo = new JLabel("Binomio al cuadrado");
       titulo.setBounds(175,87, 250, 30);
@@ -90,7 +108,7 @@ public class Ventana extends JFrame implements ActionListener{
       signo.setHorizontalAlignment(signo.CENTER);
       signo.addKeyListener(new KeyAdapter() {
           /**
-           * METODO QUE VALIDA QUE SOLO SE INGRESEN SIGNOS '+' Y '-'
+           * MÉTODO QUE VALIDA QUE SOLO SE INGRESEN SIGNOS '+' Y '-'
            * @param e Se valida por medio de entrada del evento e
            */
           @Override
